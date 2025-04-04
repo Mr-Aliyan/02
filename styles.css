@@ -1,0 +1,547 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Top bar styling */
+.top-bar {
+    background-color: white;
+    padding: 10px 0;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.top-bar .sign-in {
+    color: #003366;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+/* Main Navbar styling */
+.navbar {
+    background-color: #0025b5;
+    padding: 15px 20px;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-nav {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    height: auto;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.search-icon img {
+    width: 20px;
+    height: 20px;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.my-o2, .search-link {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.basket-icon img {
+    width: 30px;
+    height: auto;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 20px; /* Reduce padding for mobile */
+    }
+
+    .navbar .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Logo positioning for mobile */
+    .logo-nav {
+        flex: 1; /* Let the logo take more space */
+    }
+
+    /* Hide the nav links by default */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 30%;
+        background-color: #ffffff;
+        padding: 10px 0;
+        z-index: 1000;
+        gap: 15px;
+    }
+
+    .nav-links a {
+        padding: 10px;
+        font-size: 14px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Add a border for better spacing */
+    }
+
+    /* Mobile Menu Toggle Button */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+        padding: 5px 10px;
+    }
+
+    .right-section {
+        display: none; /* Hide right section in mobile by default */
+    }
+
+    /* Show the menu when active */
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+.credit-check {
+    background: linear-gradient(to bottom, #0b2344, #1271c9); /* Dark blue to lighter blue gradient */
+    padding: 30px 20px; /* Space for height */
+    text-align: left; /* left-align text */
+}
+
+.credit-check .container {
+    max-width: 1200px; /* Max width for larger screens */
+    margin: 0 auto; /* Center the container */
+}
+
+.credit-check h1 {
+    color: white; /* Heading color */
+    font-size: 30px; /* Adjust font size for readability */
+    margin-bottom: 15px; /* Space below the heading */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .credit-check {
+        padding: 20px 15px; /* Adjust padding for mobile */
+    }
+
+    .credit-check h1 {
+        font-size: 24px; /* Slightly smaller for mobile */
+    }
+
+    .credit-check .container {
+        padding: 0 10px; /* Add padding to container for mobile */
+    }
+}
+
+/* sign in section */
+.sign-in-container {
+    margin-top: 20px; /* Space between the credit check section and sign-in section */
+}
+
+.sign-in-section, .info-section {
+    padding: 20px;
+}
+
+.sign-in-section {
+    flex: 1; /* Take up space in a flex container */
+    border-right: 1px solid #ddd; /* Right border for separation */
+}
+
+.info-section {
+    flex: 1; /* Take up space in a flex container */
+    padding-left: 40px; /* Space on the left */
+}
+
+h2 {
+    color: #333;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #0052cc;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+button {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember input {
+    margin-right: 5px;
+}
+
+.sign-in-btn {
+    background-color: #0019a8; /* Updated button color */
+    color: white; /* Button text color */
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.forgot-link {
+    font-size: 0.9em;
+    color: #0052cc;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.divider {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+
+.alt-sign-in {
+    margin-top: 20px;
+}
+
+.virgin-box {
+    max-width: 400px;
+    padding: 20px;
+    border: 2px solid transparent;
+    border-image: linear-gradient(to right, red, blue) 1;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.virgin-box p:first-child {
+    color: #000;
+    font-weight: bold;
+    font-size: 1.25em;
+    margin-bottom: 10px;
+}
+
+.virgin-box p {
+    font-size: 0.9em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.virgin-box a {
+    color: #4b2c81;
+    text-decoration: underline;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.virgin-sign-in-btn {
+    background-color: #0019a8;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+.info-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.info-section a {
+    color: #0052cc;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .sign-in-container {
+        margin-top: 20px;
+    }
+
+    .container {
+        flex-direction: column; /* Stack vertically on mobile */
+    }
+
+    .sign-in-section {
+        border-right: none; /* Remove right border on mobile */
+        border-bottom: 1px solid #ddd; /* Add bottom border for separation */
+    }
+
+    .info-section {
+        padding-left: 20px; /* Reduce left padding on mobile */
+    }
+}
+
+/* Other existing styles remain unchanged */
+
+.footer {
+    background-color: #0025b5; /* Existing background color */
+    background-image: url('path/to/your/image.jpg'); /* Add your background image */
+    background-size: cover; /* Ensure the image covers the entire footer */
+    background-position: center; /* Center the image */
+    color: white;
+    padding: 40px 0;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #0025b5; /* O2 blue color */
+    color: white;
+    padding: 40px 0;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+}
+
+/* Horizontal Line Divider */
+.footer-divider {
+    border: none; /* Remove default border */
+    height: 1px; /* Height of the line */
+    background-color: white; /* Line color */
+    margin: 20px 0; /* Spacing around the line */
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 20px;
+    min-width: 200px; /* Ensures minimum width for each column */
+}
+
+/* Horizontal Line Divider */
+.footer-divider {
+    border: none; /* Remove default border */
+    height: 1px; /* Height of the line */
+    background-color: white; /* Line color */
+    margin: 20px 0; /* Spacing around the line */
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Horizontal Line Divider */
+.footer-divider {
+    border: none; /* Remove default border */
+    height: 1px; /* Height of the line */
+    background-color: white; /* Line color */
+    margin: 20px 0; /* Spacing around the line */
+}
+
+.footer-column p {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Horizontal Line Divider */
+.footer-divider {
+    border: none; /* Remove default border */
+    height: 1px; /* Height of the line */
+    background-color: white; /* Line color */
+    margin: 20px 0; /* Spacing around the line */
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+/* Horizontal Line Divider */
+.footer-divider {
+    border: none; /* Remove default border */
+    height: 1px; /* Height of the line */
+    background-color: white; /* Line color */
+    margin: 20px 0; /* Spacing around the line */
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    text-align: center;
+}
+
+.footer-social {
+    margin-bottom: 20px;
+}
+
+.footer-social a {
+    margin: 0 10px;
+}
+
+.footer-social img {
+    width: 30px;
+    height: auto;
+}
+
+.footer-text {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.footer-text a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-column {
+        margin-bottom: 30px;
+        padding: 0; /* Remove padding for smaller screens */
+    }
+
+    .footer-column p,
+    .footer-column h4 {
+        text-align: center;
+    }
+
+    .footer-social {
+        text-align: center;
+    }
+
+    .footer-social a {
+        margin: 0 5px;
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        gap: 15px; /* Spacing between links */
+        align-items: center; /* Center links */
+        width: 100%; /* Full width links */
+    }
+
+    .right-section {
+        flex-direction: column; /* Stack right section items vertically */
+        align-items: center; /* Center align */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 30px 10px;
+    }
+
+    .footer-column {
+        padding: 0 10px;
+    }
+
+    .footer-bottom .footer-text {
+        font-size: 12px;
+    }
+
+    .otp-authentication h1 {
+        font-size: 24px; /* Smaller heading for mobile */
+    }
+
+    .otp-authentication p {
+        font-size: 14px; /* Smaller paragraph for mobile */
+    }
+}
+
+/* Add space above the card-details .container */
+.card-details .container {
+    margin-top: 40px; /* Space above the OTP section */
+    margin-bottom: 40px; /* Space below the OTP section */
+}

